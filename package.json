@@ -1,20 +1,30 @@
 {
-  "name": "app",
+  "name": "whowilldareapplication",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is random name generaton applicaiton. User can enter how many names he/she want. The application algorithm will take one random name and display.\r This application will take name from user and display one name randamly for dare are clear from its name.",
   "main": "Gruntfile.js",
   "dependencies": {
     "bower": "^1.8.0",
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0"
+    "grunt-contrib-jshint": "^1.1.0",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-uglify": "^3.0.1"
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziaullahkhan/who-will-dare-application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ziaullahkhan/who-will-dare-application/issues"
+  },
+  "homepage": "https://github.com/ziaullahkhan/who-will-dare-application#readme"
 }
