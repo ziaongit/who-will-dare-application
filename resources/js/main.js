@@ -158,7 +158,7 @@ this.showRandonUser = function() {
     resultDiv.insertAdjacentHTML('afterbegin', '<h3>'+ daringUser +'</h3>');
 };
 /*-----------------------------------------------------------
-Show RandonUser End
+Show Randon User End
 ------------------------------------------------------------*/
 
 
