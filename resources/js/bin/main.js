@@ -148,13 +148,33 @@ this.getRandomUser = function(){
 Get Random User End
 ------------------------------------------------------------*/
 
+/*-----------------------------------------------------------
+Show Daring Start
+------------------------------------------------------------*/
 this.showDaring = function() {
     var resulContainer = document.querySelector('.result_container');
     var applicantContainer = document.querySelector('.applicant_container');
 
     applicantContainer.className += ' hidden';
     resulContainer.className = 'result_container';
+    showRandonUser();
 };
+/*-----------------------------------------------------------
+Show Daring End
+------------------------------------------------------------*/
+/*-----------------------------------------------------------
+Show Daring Start
+------------------------------------------------------------*/
+this.showRandonUser = function() {
+    var resultDiv = document.querySelector('.result');
+    var daringUser = applicants[Math.floor(Math.random() * applicants.length)];
+    resultDiv.innerHTML = '';
+    resultDiv.insertAdjacentHTML('afterbegin', '<h3>'+ daringUser +'</h3>');
+};
+/*-----------------------------------------------------------
+Show Daring End
+------------------------------------------------------------*/
+
 
     this.int();
 })();
