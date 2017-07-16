@@ -45,6 +45,7 @@ Generate List Start
             if(this.validatyCheck(value.toLowerCase())){
                 applicants.push(value.toLowerCase());
                 input.value = '';
+                capitalizeList();
                 showList();
             }else {
                 showError();
@@ -68,6 +69,14 @@ Validate input Start
 /*-----------------------------------------------------------
 Validate input End
 ------------------------------------------------------------*/
+
+    this.capitalizeList = function() {
+        for(var i = 1 ; i < applicants.length ; i++){
+            applicants[i] = applicants[i].charAt(0).toUpperCase() + applicants[i].substr(1);
+        } 
+
+    }
+ 
 
 /*-----------------------------------------------------------
 Show List Start
@@ -163,7 +172,7 @@ this.showDaring = function() {
 Show Daring End
 ------------------------------------------------------------*/
 /*-----------------------------------------------------------
-Show Daring Start
+Show Randon User Start
 ------------------------------------------------------------*/
 this.showRandonUser = function() {
     var resultDiv = document.querySelector('.result');
@@ -172,7 +181,7 @@ this.showRandonUser = function() {
     resultDiv.insertAdjacentHTML('afterbegin', '<h3>'+ daringUser +'</h3>');
 };
 /*-----------------------------------------------------------
-Show Daring End
+Show Randon User End
 ------------------------------------------------------------*/
 
 

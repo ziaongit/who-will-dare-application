@@ -31,6 +31,7 @@ Generate List Start
             if(this.validatyCheck(value.toLowerCase())){
                 applicants.push(value.toLowerCase());
                 input.value = '';
+                capitalizeList();
                 showList();
             }else {
                 showError();
@@ -54,6 +55,14 @@ Validate input Start
 /*-----------------------------------------------------------
 Validate input End
 ------------------------------------------------------------*/
+
+    this.capitalizeList = function() {
+        for(var i = 1 ; i < applicants.length ; i++){
+            applicants[i] = applicants[i].charAt(0).toUpperCase() + applicants[i].substr(1);
+        } 
+
+    }
+ 
 
 /*-----------------------------------------------------------
 Show List Start
