@@ -4,6 +4,7 @@
 
     this.int = function() {
         this.addApplicants();
+        this.getRandomUser();
     };
 
 /*-----------------------------------------------------------
@@ -112,6 +113,39 @@ Delete Applicant Start
     };
 /*-----------------------------------------------------------
 Delete Applicant End
+------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Get Random User Start
+------------------------------------------------------------*/
+this.getRandomUser = function(){
+    var resulButton = document.querySelector('#show_result');
+    
+    resulButton.addEventListener('click', function(){
+        if(applicants.length > 1){
+            showDaring();
+        }else {
+            showError();
+        }
+    });
+
+};
+/*-----------------------------------------------------------
+Get Random User End
+------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Show Daring Start
+------------------------------------------------------------*/
+this.showDaring = function() {
+    var resulContainer = document.querySelector('.result_container');
+    var applicantContainer = document.querySelector('.applicant_container');
+
+    applicantContainer.className += ' hidden';
+    resulContainer.className = 'result_container';
+};
+/*-----------------------------------------------------------
+Show Daring End
 ------------------------------------------------------------*/
 
     this.int();

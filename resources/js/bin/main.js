@@ -18,6 +18,7 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 
     this.int = function() {
         this.addApplicants();
+        this.getRandomUser();
     };
 
 /*-----------------------------------------------------------
@@ -127,6 +128,33 @@ Delete Applicant Start
 /*-----------------------------------------------------------
 Delete Applicant End
 ------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Get Random User Start
+------------------------------------------------------------*/
+this.getRandomUser = function(){
+    var resulButton = document.querySelector('#show_result');
+    
+    resulButton.addEventListener('click', function(){
+        if(applicants.length > 1){
+            showDaring();
+        }else {
+            showError();
+        }
+    });
+
+};
+/*-----------------------------------------------------------
+Get Random User End
+------------------------------------------------------------*/
+
+this.showDaring = function() {
+    var resulContainer = document.querySelector('.result_container');
+    var applicantContainer = document.querySelector('.applicant_container');
+
+    applicantContainer.className += ' hidden';
+    resulContainer.className = 'result_container';
+};
 
     this.int();
 })();
