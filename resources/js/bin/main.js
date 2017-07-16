@@ -19,6 +19,8 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
     this.int = function() {
         this.addApplicants();
         this.getRandomUser();
+        this.tryAgain();
+        this.startAgain();
     };
 
 /*-----------------------------------------------------------
@@ -182,6 +184,50 @@ this.showRandonUser = function() {
 };
 /*-----------------------------------------------------------
 Show Randon User End
+------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Try Again Start
+------------------------------------------------------------*/
+this.tryAgain = function() {
+    var runAgainButton = document.querySelector('.try_again');
+    runAgainButton.addEventListener('click', function(e){
+        showRandonUser();
+    });
+};
+/*-----------------------------------------------------------
+Rry Again End
+------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Start Again Start
+------------------------------------------------------------*/
+this.startAgain = function() {
+    var startAgainButton = document.querySelector('.start_again');
+    startAgainButton.addEventListener('click', function(e){
+        start();
+    });
+};
+/*-----------------------------------------------------------
+Start Again End
+------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Start Start
+------------------------------------------------------------*/
+this.start = function() {
+    var resulContainer = document.querySelector('.result_container');
+    var applicantContainer = document.querySelector('.applicant_container');
+    var applicantWrapper = document.querySelector('.applicant_list_wrapper');
+
+    applicantContainer.className += 'applicant_container';
+    resulContainer.className = 'result_container hidden';
+    applicantWrapper.innerHTML = '';
+
+    applicants = [];
+};
+/*-----------------------------------------------------------
+Start End
 ------------------------------------------------------------*/
 
 
