@@ -33,7 +33,6 @@ Generate List Start
             if(this.validatyCheck(value.toLowerCase())){
                 applicants.push(value.toLowerCase());
                 input.value = '';
-                capitalizeList();
                 showList();
             }else {
                 showError();
@@ -57,14 +56,6 @@ Validate input Start
 /*-----------------------------------------------------------
 Validate input End
 ------------------------------------------------------------*/
-
-    this.capitalizeList = function() {
-        for(var i = 1 ; i < applicants.length ; i++){
-            applicants[i] = applicants[i].charAt(0).toUpperCase() + applicants[i].substr(1);
-        } 
-
-    }
- 
 
 /*-----------------------------------------------------------
 Show List Start
@@ -129,20 +120,37 @@ Delete Applicant End
 /*-----------------------------------------------------------
 Get Random User Start
 ------------------------------------------------------------*/
-this.getRandomUser = function(){
-    var resulButton = document.querySelector('#show_result');
-    
-    resulButton.addEventListener('click', function(){
-        if(applicants.length > 1){
-            showDaring();
-        }else {
-            showError();
-        }
-    });
-
-};
+    this.getRandomUser = function(){
+        var resulButton = document.querySelector('#show_result');
+        
+        resulButton.addEventListener('click', function(){
+            if(applicants.length > 1){
+                thinking();
+            }else {
+                showError();
+            }
+        });
+    };
 /*-----------------------------------------------------------
 Get Random User End
+------------------------------------------------------------*/
+
+/*-----------------------------------------------------------
+Thinking Start
+------------------------------------------------------------*/
+    this.thinking = function() {
+            var thinkingContainer = document.querySelector('.thinking_container');
+            var applicantContainer = document.querySelector('.applicant_container');
+            applicantContainer.className += ' hidden';
+            thinkingContainer.className = 'thinking_container';
+            
+            setTimeout(function(){
+                showDaring();
+                }, 3000);
+    };
+
+/*-----------------------------------------------------------
+Thinking End
 ------------------------------------------------------------*/
 
 /*-----------------------------------------------------------
@@ -150,9 +158,9 @@ Show Daring Start
 ------------------------------------------------------------*/
 this.showDaring = function() {
     var resulContainer = document.querySelector('.result_container');
-    var applicantContainer = document.querySelector('.applicant_container');
+    var thinkingContainer = document.querySelector('.thinking_container');
 
-    applicantContainer.className += ' hidden';
+    thinkingContainer.className += ' hidden';
     resulContainer.className = 'result_container';
     showRandonUser();
 };
@@ -164,6 +172,10 @@ Show Randon User Start
 ------------------------------------------------------------*/
 this.showRandonUser = function() {
     var resultDiv = document.querySelector('.result');
+    var resultThinking = document.querySelector('.result_thinking');
+    resultThinking.className += ' hidden';
+    resultDiv.className = 'result';
+
     var daringUser = applicants[Math.floor(Math.random() * applicants.length)];
     resultDiv.innerHTML = '';
     resultDiv.insertAdjacentHTML('afterbegin', '<h3>'+ daringUser +'</h3>');
@@ -177,8 +189,19 @@ Try Again Start
 ------------------------------------------------------------*/
 this.tryAgain = function() {
     var runAgainButton = document.querySelector('.try_again');
+
     runAgainButton.addEventListener('click', function(e){
-        showRandonUser();
+
+        var resultThinking = document.querySelector('.result_thinking');
+        var resultDiv = document.querySelector('.result');
+        
+        resultThinking.className = 'result_thinking';
+        resultDiv.className += ' hidden';
+
+        setTimeout(function(){
+            showRandonUser();
+        }, 3000);
+        
     });
 };
 /*-----------------------------------------------------------

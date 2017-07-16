@@ -84,3 +84,22 @@ input:focus {
 .result_container div {
     cursor: pointer;
 }
+
+/* ===================== Thinking Container ---- */
+.thinking_container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.thinking_container img {
+    width: 250px;
+    height: auto;
+    padding: 20px;
+}
+
+.result_thinking img {
+    width: 60px;
+    height: auto;
+    padding: 5px;
+}
