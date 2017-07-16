@@ -149,7 +149,7 @@ this.showDaring = function() {
 Show Daring End
 ------------------------------------------------------------*/
 /*-----------------------------------------------------------
-Show Daring Start
+Show Randon User Start
 ------------------------------------------------------------*/
 this.showRandonUser = function() {
     var resultDiv = document.querySelector('.result');
@@ -158,7 +158,7 @@ this.showRandonUser = function() {
     resultDiv.insertAdjacentHTML('afterbegin', '<h3>'+ daringUser +'</h3>');
 };
 /*-----------------------------------------------------------
-Show Daring End
+Show RandonUser End
 ------------------------------------------------------------*/
 
 
